@@ -1,5 +1,6 @@
 // import { router } from "react";
 // import { Button, TouchableOpacity, View, Text } from 'react-native';
+import PrimaryButton from "@/components/primaryButton"
 import { Ionicons } from "@expo/vector-icons"
 import { useRouter } from "expo-router"
 import { useState } from "react"
@@ -48,16 +49,10 @@ export default function registerOtp() {
                 </View>
         
                 {/* Button */}
-                {/* <TouchableOpacity style={styles.mainButton}>
-                  <Text style={styles.mainButtonText}>Recevoir le code</Text>
-                </TouchableOpacity> */}
-                <TouchableOpacity
-                style={styles.mainButton}
-                onPress={() => router.push("/register-success")}
-                >
-                    <Text style={styles.mainButtonText}>S'inscrire</Text>
-
-                </TouchableOpacity>
+                <PrimaryButton
+                          title="Se connecter"
+                          onPress={() => router.push("/register-success")}
+                        />
 
                  <Button
                     title="Test Admin"
@@ -143,18 +138,5 @@ const styles = StyleSheet.create({
 
   },
 
-mainButton: {
-  backgroundColor: "#E6D3A3",
-  borderRadius: 30,
-  paddingVertical: 14,
-  marginTop: 10
-},
-
-mainButtonText: {
-  textAlign: "center",
-  fontWeight: "bold",
-  color: "white",
-  fontSize: 23
-},
 
 })

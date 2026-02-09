@@ -11,6 +11,7 @@ import { useState } from "react"
 import { useRouter } from "expo-router"
 import { Ionicons } from "@expo/vector-icons"
 import Checkbox from "expo-checkbox"
+import PrimaryButton from '../../components/primaryButton';
 
 export default function Login() {
     const router = useRouter()
@@ -46,12 +47,14 @@ export default function Login() {
                 </View>
         
                 {/* Button */}
-                {/* <TouchableOpacity style={styles.mainButton}>
-                  <Text style={styles.mainButtonText}>Recevoir le code</Text>
-                </TouchableOpacity> */}
-                <TouchableOpacity style={styles.mainButton} onPress={() => router.push("/login-otp")}>
+                {/* <TouchableOpacity style={styles.mainButton} onPress={() => router.push("/login-otp")}>
                     <Text style={styles.mainButtonText}>Recevoir le code</Text>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
+
+                <PrimaryButton
+                title="Recevoir le code"
+                onPress={() => router.push("/login-otp")}
+                />
 
                 <TouchableOpacity onPress={() => router.push("/login")}>
                   <Text style={{ textAlign: "center", marginTop: 12 }}>Vous n'avez pas de compte ?</Text>

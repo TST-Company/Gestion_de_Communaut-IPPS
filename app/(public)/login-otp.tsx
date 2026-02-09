@@ -47,16 +47,9 @@ export default function Login() {
                 </View>
         
                 {/* Button */}
-                {/* <TouchableOpacity style={styles.mainButton}>
-                  <Text style={styles.mainButtonText}>Recevoir le code</Text>
-                </TouchableOpacity> */}
-                {/* <TouchableOpacity
-                style={styles.mainButton} // onPress={() => router.push("/login-otp")}
-                >
-                    <Text style={styles.mainButtonText}>Se coonecter</Text>
-                </TouchableOpacity> */}
                 <PrimaryButton 
                   title="Se connecter"
+                  onPress={() => router.push("/dashboard")}
                 />
                  
                 <TouchableOpacity onPress={() => router.push("/login")}>
@@ -136,26 +129,9 @@ const styles = StyleSheet.create({
       ...({ outlineStyle: "none" } as any)
 
   },
-//   mainButton: {
-//     marginTop: 20,
-//     backgroundColor: "#E6D3A3",
-// }
 codeReçu: {
    marginTop: 20,
   fontSize: 14
-},
-
-mainButton: {
-  backgroundColor: "#E6D3A3",
-  borderRadius: 30,
-  paddingVertical: 14,
-  marginTop: 10
-},
-
-mainButtonText: {
-  textAlign: "center",
-  fontWeight: "bold",
-  color: "white"
 },
 
 })

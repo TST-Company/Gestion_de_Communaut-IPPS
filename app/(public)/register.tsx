@@ -160,9 +160,13 @@ export default function Register() {
           </Text>
         </View>
 
-        <TouchableOpacity style={styles.mainButton} onPress={() => router.push("/register-otp")}>
+        {/* <TouchableOpacity style={styles.mainButton} onPress={() => router.push("/register-otp")}>
           <Text style={styles.mainButtonText}>Recevoir le code</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
+        <PrimaryButton
+          title="Se connecter"
+          onPress={() => router.push("/register-otp")}
+        />
 
         {/* Login */}
         <TouchableOpacity onPress={() => router.push("/login")}>
@@ -172,6 +176,7 @@ export default function Register() {
         <TouchableOpacity onPress={() => router.push("/login")}>
           <Text style={styles.login}>Se connecter</Text>
         </TouchableOpacity>
+        
       </View>
     </ScrollView>
   )
@@ -204,7 +209,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 30,
     fontWeight: "bold",
-    color: "#C49A3A",
+    color: "#C9A44C",
     alignItems: "center"
     // marginLeft: 8
   },
@@ -339,19 +344,6 @@ checkmarkSms: {
 
   },
 
-  mainButton: {
-    backgroundColor: "#E6D3A3",
-    borderRadius: 30,
-    paddingVertical: 14,
-    marginTop: 10
-  },
-
-  mainButtonText: {
-    textAlign: "center",
-    fontWeight: "bold",
-    color: "white",
-    fontSize: 23
-  },
 
   login: {
     textAlign: "center",
