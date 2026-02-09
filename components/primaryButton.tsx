@@ -10,7 +10,7 @@ export default function PrimaryButton({
       onPress={onPress}
       style={{
         backgroundColor: variant === "primary" ? "#C9A44C" : "#FFF",
-        borderRadius: 24,
+        borderRadius: 30,
         padding: 14,
         marginVertical: 8,
         // borderWidth: variant === "secondary" ? 1 : 0

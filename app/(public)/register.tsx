@@ -4,12 +4,14 @@ import {
   TextInput,
   StyleSheet,
   TouchableOpacity,
-    Button
+    Button,
+    ScrollView
 } from "react-native"
 import { useState } from "react"
 import { useRouter } from "expo-router"
 import { Ionicons } from "@expo/vector-icons"
 import Checkbox from "expo-checkbox"
+import PrimaryButton from "@/components/primaryButton"
 
 export default function Register() {
   const router = useRouter()
@@ -21,7 +23,7 @@ export default function Register() {
   const [accepted, setAccepted] = useState(false)
 
   return (
-    <View style={styles.page}>
+    <ScrollView contentContainerStyle={{ flexGrow: 1, backgroundColor: "#fff", borderRadius: 15, justifyContent: "center" }} style={styles.page}>
       <View style={styles.card}>
         {/* Header */}
         <View style={styles.header}>
@@ -34,6 +36,7 @@ export default function Register() {
 
         <Text style={styles.section}>Vos coordonnées</Text>
 
+        <Text style={styles.titleInput}>Prenom</Text>
         {/* Prénom */}
         <View style={styles.input}>
           <Ionicons name="person-outline" size={20} />
@@ -44,7 +47,7 @@ export default function Register() {
             onChangeText={setFirst}
           /> */}
           <TextInput
-            placeholder="Prénom"
+            placeholder="Entrer votre Prénom"
             style={styles.inputText}
             value={firstName}
             onChangeText={setFirst}
@@ -58,10 +61,11 @@ export default function Register() {
         </View>
 
         {/* Nom */}
+          <Text style={styles.titleInput}>Nom</Text>
         <View style={styles.input}>
           <Ionicons name="person-outline" size={20} />
           <TextInput
-            placeholder="Nom"
+            placeholder="Votre Nom"
             style={styles.inputText}
             value={lastName}
             onChangeText={setLast}
@@ -70,6 +74,7 @@ export default function Register() {
         </View>
 
         {/* Téléphone */}
+        <Text style={styles.titleInput}>Téléphone</Text>
         <View style={styles.input}>
           <Ionicons name="call-outline" size={20} />
           <TextInput
@@ -82,7 +87,7 @@ export default function Register() {
           />
         </View>
 
-        <Text style={styles.section}>Canal de réception préférer</Text>
+        <Text style={styles.sectionCanal}>Canal de réception préférer</Text>
 
 
         {/* Channels */}
@@ -152,36 +157,23 @@ export default function Register() {
               Conditions d'utilisation
             </Text>
             {" "}et la réception de notifications via l'application, WhatsApp et SMS
-        </Text>
+          </Text>
         </View>
 
-        {/* Button */}
-        {/* <TouchableOpacity style={styles.mainButton}>
+        <TouchableOpacity style={styles.mainButton} onPress={() => router.push("/register-otp")}>
           <Text style={styles.mainButtonText}>Recevoir le code</Text>
-        </TouchableOpacity> */}
-        <Button 
-        // style={styles.mainButton}
-        color="#E6D3A3"
-        title="S'inscrire" 
-        onPress={() => 
-        // router.push("/register-success")
-        router.push("/register-otp")
-        } 
-        />
-
-       
-
+        </TouchableOpacity>
 
         {/* Login */}
-        <Text style={{ textAlign: "center", marginTop: 12 }}>
-          Vous avez déjà un compte ?
-        </Text>
+        <TouchableOpacity onPress={() => router.push("/login")}>
+          <Text style={{ textAlign: "center", marginTop: 12, fontSize: 15 }}>Vous avez déjà un compte ?</Text>
+        </TouchableOpacity>
 
         <TouchableOpacity onPress={() => router.push("/login")}>
           <Text style={styles.login}>Se connecter</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </ScrollView>
   )
 }
 
@@ -190,15 +182,16 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#ECE8D8",
     // justifyContent: "center",
-    paddingTop: 50,
+    paddingTop: 40,
     padding: 16,
+    // justifyContent: "center"
     
   },
 
   card: {
     backgroundColor: "white",
-    borderRadius: 24,
-    padding: 20
+    borderRadius: 5,
+    padding: 30
   },
 
   header: {
@@ -217,9 +210,17 @@ const styles = StyleSheet.create({
   },
 
   section: {
-    marginTop: 10,
+    marginTop: 20,
     marginBottom: 8,
-    fontWeight: "600"
+    fontWeight: "600",
+    fontSize: 18,
+  },
+  sectionCanal: {
+    marginTop: 20,
+    marginBottom: 8,
+    fontWeight: "600",
+    fontSize: 18,
+    textAlign: "center"
   },
 
   input: {
@@ -234,6 +235,13 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     overflow: "hidden" 
   },
+  titleInput: {
+    fontSize: 15,
+    fontWeight: "600",
+    marginTop: 12,
+    marginBottom: 4,
+
+  },
 
   inputText: {
     flex: 1,
@@ -243,15 +251,14 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
     // @ts-ignore - outline est pour le web,
     // outlineStyle: "none",
-      ...({ outlineStyle: "none" } as any)
-
-    
+      ...({ outlineStyle: "none" } as any) 
   },
 
   channels: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginVertical: 10
+    marginVertical: 10,
+    marginTop: 15
   },
 
 channel: {
@@ -320,12 +327,14 @@ checkmarkSms: {
     flexDirection: "row",
     alignItems: "center",
     gap: 8,
-    marginVertical: 10
+    marginVertical: 10,
+    marginTop: 22
   },
 
   checkboxText: {
     flex: 1,
-    fontSize: 12
+    fontSize: 12,
+
   },
 
   mainButton: {
@@ -338,13 +347,15 @@ checkmarkSms: {
   mainButtonText: {
     textAlign: "center",
     fontWeight: "bold",
-    color: "white"
+    color: "white",
+    fontSize: 23
   },
 
   login: {
     textAlign: "center",
     fontWeight: "bold",
-    marginTop: 4
+    marginTop: 4,
+    fontSize: 18
   },
 })
 

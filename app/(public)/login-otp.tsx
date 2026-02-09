@@ -25,15 +25,15 @@ export default function Login() {
 
                 <Text style={styles.title}>Connexion</Text>                  
                 </View>
-                  <Text style={styles.section}>Quel est votre numéro ?</Text>
-                  <Text>Nous vous enverrons un code de connexion sécurisé. </Text>
+                  <Text style={styles.section}>Code de vérification?</Text>
+                  <Text>Entrez le code reçu au +221 77 723 77 20 </Text>
                   
-                {/* Téléphone */}
-                <Text>Téléphone </Text>
+                {/* Code OTP */}
+                <Text>Code OTP</Text>
                 <View style={styles.input}>
                   <Ionicons name="call-outline" size={20} />
                   <TextInput
-                    placeholder="Numéro de téléphone"
+                    placeholder="Code OTP"
                     keyboardType="phone-pad"
                     style={styles.inputText}
                     value={phone}
@@ -46,14 +46,17 @@ export default function Login() {
                 {/* <TouchableOpacity style={styles.mainButton}>
                   <Text style={styles.mainButtonText}>Recevoir le code</Text>
                 </TouchableOpacity> */}
-                <TouchableOpacity style={styles.mainButton} onPress={() => router.push("/login-otp")}>
-                    <Text style={styles.mainButtonText}>Recevoir le code</Text>
+                <TouchableOpacity
+                style={styles.mainButton} // onPress={() => router.push("/login-otp")}
+                >
+                    <Text style={styles.mainButtonText}>Se coonecter</Text>
                 </TouchableOpacity>
-
+                 
                 <TouchableOpacity onPress={() => router.push("/login")}>
-                  <Text style={{ textAlign: "center", marginTop: 12 }}>Vous n'avez pas de compte ?</Text>
+                  <Text style={{ textAlign: "center", marginTop: 12 }}>Modifier le numéro </Text>
                 </TouchableOpacity>
-                
+                 
+
               </View>
         </View>
     )
@@ -64,8 +67,7 @@ const styles = StyleSheet.create({
   page: {
     flex: 1,
     backgroundColor: "#ECE8D8",
-    // justifyContent: "center",
-    paddingTop: 40,
+    paddingTop: 50,
     padding: 16
   },
 
