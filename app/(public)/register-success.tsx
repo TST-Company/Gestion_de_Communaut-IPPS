@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native"
 import { useRouter } from "expo-router"
 import { Ionicons } from "@expo/vector-icons"
+import PrimaryButton from '../../components/primaryButton';
 
 export default function Success() {
   const router = useRouter()
@@ -10,7 +11,7 @@ export default function Success() {
       {/* Icône de succès */}
       <View style={styles.iconContainer}>
         <View style={styles.iconCircle}>
-          <Ionicons name="document-text" size={50} color="#4CAF50" />
+          <Ionicons name="document-text" size={70} color="#4CAF50" />
           <View style={styles.checkmark}>
             <Ionicons name="checkmark-circle" size={40} color="#4CAF50" />
           </View>
@@ -26,12 +27,18 @@ export default function Success() {
       </Text>
 
       {/* Bouton */}
-      <TouchableOpacity 
+      {/* <TouchableOpacity 
         style={styles.button}
         onPress={() => router.replace("/login")}
       >
         <Text style={styles.buttonText}>Se connecter</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
+      <PrimaryButton
+        title="Se connecter"
+        variant="secondary"
+        onPress={() => router.push("/login")}
+        style={{ alignSelf: "stretch" }}
+      />
     </View>
   )
 }
@@ -69,7 +76,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: "bold",
     color: "#333",
     marginBottom: 16,
@@ -77,7 +84,7 @@ const styles = StyleSheet.create({
   },
 
   message: {
-    fontSize: 14,
+    fontSize: 16,
     color: "#666",
     textAlign: "center",
     lineHeight: 22,

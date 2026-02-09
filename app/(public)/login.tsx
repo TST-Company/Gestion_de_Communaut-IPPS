@@ -4,7 +4,8 @@ import {
   TextInput,
   StyleSheet,
   TouchableOpacity,
-    Button
+    Button,
+    ScrollView
 } from "react-native"
 import { useState } from "react"
 import { useRouter } from "expo-router"
@@ -15,7 +16,9 @@ export default function Login() {
     const router = useRouter()
     const [phone, setPhone] =  useState("")
     return (
-          <View style={styles.page}>
+          // <ScrollView style={styles.page}>
+            <ScrollView contentContainerStyle={{ flexGrow: 1, backgroundColor: "#fff", borderRadius: 15, justifyContent: "center" }} style={styles.page}>
+          
               <View style={styles.card}>
                 {/* Header */}
                 <View style={styles.header}>
@@ -26,10 +29,10 @@ export default function Login() {
                 <Text style={styles.title}>Connexion</Text>                  
                 </View>
                   <Text style={styles.section}>Quel est votre numéro ?</Text>
-                  <Text>Nous vous enverrons un code de connexion sécurisé. </Text>
+                  <Text style={styles.text}>Nous vous enverrons un code de connexion sécurisé. </Text>
                   
                 {/* Téléphone */}
-                <Text>Téléphone </Text>
+                <Text style={styles.titleTelephone}>Téléphone </Text>
                 <View style={styles.input}>
                   <Ionicons name="call-outline" size={20} />
                   <TextInput
@@ -55,7 +58,7 @@ export default function Login() {
                 </TouchableOpacity>
                 
               </View>
-        </View>
+        </ScrollView>
     )
 }
 
@@ -64,16 +67,16 @@ const styles = StyleSheet.create({
   page: {
     flex: 1,
     backgroundColor: "#ECE8D8",
-    // justifyContent: "center",
+    // // justifyContent: "center",
     paddingTop: 40,
     padding: 16
   },
 
   card: {
-    backgroundColor: "white",
+     backgroundColor: "white",
     borderRadius: 5,
-    padding: 30,
-    paddingBottom: 300
+    padding: 20,
+    paddingBottom: 380
   },
 
   header: {
@@ -84,7 +87,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: "bold",
     color: "#C49A3A",
     alignItems: "center"
@@ -95,6 +98,13 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 8,
     fontWeight: "600",
+    fontSize: 24
+  },
+
+  titleTelephone: {
+    marginTop: 12,
+    fontSize: 16,
+    fontWeight: "bold"
   },
 
   input: {
@@ -125,6 +135,10 @@ const styles = StyleSheet.create({
 //     marginTop: 20,
 //     backgroundColor: "#E6D3A3",
 // }
+text: {
+  marginTop: 20,
+  fontSize: 14
+},
 
 mainButton: {
   backgroundColor: "#E6D3A3",
@@ -136,7 +150,8 @@ mainButton: {
 mainButtonText: {
   textAlign: "center",
   fontWeight: "bold",
-  color: "white"
+  color: "white", 
+  fontSize: 23
 },
 
 })

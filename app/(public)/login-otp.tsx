@@ -4,18 +4,22 @@ import {
   TextInput,
   StyleSheet,
   TouchableOpacity,
-    Button
+    Button,
+    ScrollView
 } from "react-native"
 import { useState } from "react"
 import { useRouter } from "expo-router"
 import { Ionicons } from "@expo/vector-icons"
 import Checkbox from "expo-checkbox"
+import PrimaryButton from '../../components/primaryButton';
 
 export default function Login() {
     const router = useRouter()
     const [phone, setPhone] =  useState("")
     return (
-          <View style={styles.page}>
+          // <ScrollView style={styles.page}>
+          <ScrollView contentContainerStyle={{ flexGrow: 1, backgroundColor: "#fff", borderRadius: 15, justifyContent: "center" }} style={styles.page}>
+          
               <View style={styles.card}>
                 {/* Header */}
                 <View style={styles.header}>
@@ -26,14 +30,14 @@ export default function Login() {
                 <Text style={styles.title}>Connexion</Text>                  
                 </View>
                   <Text style={styles.section}>Code de vérification?</Text>
-                  <Text>Entrez le code reçu au +221 77 723 77 20 </Text>
+                  <Text style={styles.codeReçu}>Entrez le code reçu au +221 77 723 77 20 </Text>
                   
                 {/* Code OTP */}
-                <Text>Code OTP</Text>
+                <Text style={styles.titleOpt}>Code OTP</Text>
                 <View style={styles.input}>
                   <Ionicons name="call-outline" size={20} />
                   <TextInput
-                    placeholder="Code OTP"
+                    placeholder="Entrer le Code OTP"
                     keyboardType="phone-pad"
                     style={styles.inputText}
                     value={phone}
@@ -46,11 +50,14 @@ export default function Login() {
                 {/* <TouchableOpacity style={styles.mainButton}>
                   <Text style={styles.mainButtonText}>Recevoir le code</Text>
                 </TouchableOpacity> */}
-                <TouchableOpacity
+                {/* <TouchableOpacity
                 style={styles.mainButton} // onPress={() => router.push("/login-otp")}
                 >
                     <Text style={styles.mainButtonText}>Se coonecter</Text>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
+                <PrimaryButton 
+                  title="Se connecter"
+                />
                  
                 <TouchableOpacity onPress={() => router.push("/login")}>
                   <Text style={{ textAlign: "center", marginTop: 12 }}>Modifier le numéro </Text>
@@ -58,7 +65,7 @@ export default function Login() {
                  
 
               </View>
-        </View>
+        </ScrollView>
     )
 }
 
@@ -74,8 +81,8 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: "white",
     borderRadius: 5,
-    padding: 30,
-    paddingBottom: 300
+    padding: 20,
+    paddingBottom: 380
   },
 
   header: {
@@ -86,17 +93,23 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: "bold",
     color: "#C49A3A",
     alignItems: "center"
     // marginLeft: 8
   },
+   titleOpt: {
+    marginTop: 12,
+    fontSize: 16,
+    fontWeight: "bold"
+  },
 
   section: {
-    marginTop: 10,
+    marginTop: 12,
     marginBottom: 8,
     fontWeight: "600",
+    fontSize: 24,
   },
 
   input: {
@@ -127,6 +140,10 @@ const styles = StyleSheet.create({
 //     marginTop: 20,
 //     backgroundColor: "#E6D3A3",
 // }
+codeReçu: {
+   marginTop: 20,
+  fontSize: 14
+},
 
 mainButton: {
   backgroundColor: "#E6D3A3",

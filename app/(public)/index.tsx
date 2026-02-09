@@ -16,7 +16,7 @@ export default function Home() {
         <Text style={styles.title}>
           Community App
         </Text>
-        <Text style={{ textAlign: "center", marginVertical: 12 }}>
+        <Text style={{ textAlign: "center", marginVertical: 12, fontSize: "18" }}>
           Rester connecter avec notre communauté simplement et directement.
         </Text>
 
@@ -36,7 +36,8 @@ const styles = StyleSheet.create({
   title: {
     textAlign: "center",
     marginVertical: 12,
-    fontSize: 25,
+    fontSize: 30,
     fontWeight: "bold"
-  }
+  },
+  
 })

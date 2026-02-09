@@ -202,7 +202,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: "bold",
     color: "#C49A3A",
     alignItems: "center"
@@ -213,13 +213,14 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 8,
     fontWeight: "600",
-    fontSize: 18,
+    fontSize: 24,
+    // marginTop: 22
   },
   sectionCanal: {
     marginTop: 20,
     marginBottom: 8,
     fontWeight: "600",
-    fontSize: 18,
+    fontSize: 22,
     textAlign: "center"
   },
 
@@ -236,7 +237,7 @@ const styles = StyleSheet.create({
     overflow: "hidden" 
   },
   titleInput: {
-    fontSize: 15,
+    fontSize: 18,
     fontWeight: "600",
     marginTop: 12,
     marginBottom: 4,
@@ -249,6 +250,7 @@ const styles = StyleSheet.create({
     padding: 0,           // ← Important
     margin: 0,            // ← Important
     backgroundColor: "transparent",
+    
     // @ts-ignore - outline est pour le web,
     // outlineStyle: "none",
       ...({ outlineStyle: "none" } as any) 
