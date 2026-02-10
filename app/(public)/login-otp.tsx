@@ -55,6 +55,11 @@ export default function Login() {
                 <TouchableOpacity onPress={() => router.push("/login")}>
                   <Text style={{ textAlign: "center", marginTop: 12 }}>Modifier le numéro </Text>
                 </TouchableOpacity>
+
+                <Button
+                    title="Test Admin"
+                    onPress={() => router.replace("/admin/dashboard")}
+                  /> 
                  
 
               </View>

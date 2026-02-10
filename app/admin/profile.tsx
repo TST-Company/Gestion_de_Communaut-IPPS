@@ -58,12 +58,13 @@ export default function ProfileScreen() {
       {/* Bouton de déconnexion */}
       <TouchableOpacity 
         style={styles.logoutButton}
-        onPress={handleLogout}
+        onPress= {handleLogout}
       >
         <Ionicons name="log-out-outline" size={24} color="#EF5350" />
         <Text style={styles.logoutText}>Se déconnecter</Text>
       </TouchableOpacity>
     </ScrollView>
+    
   )
 }
 
