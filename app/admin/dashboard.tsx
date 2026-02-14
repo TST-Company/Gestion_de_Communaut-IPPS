@@ -36,47 +36,8 @@ const styles = StyleSheet.create({
     marginTop: 20,
     fontWeight: "bold",
     fontSize: 24,
+  },
+  content: {
+    
   }
 })
-
-
-// import { StyleSheet, ScrollView, Text } from "react-native"
-// import AdminHeader from "@/components/admin/adminHeader"
-// import StatsGrid from "@/components/admin/statsGrid"
-// import QuickActions from "@/components/admin/quickActions"
-
-// export default function AdminDashboard() {
-//   return (
-//     <ScrollView 
-//       style={styles.page}
-//       contentContainerStyle={styles.content}
-//       showsVerticalScrollIndicator={false}
-//     >
-//       {/* ❌ Pas de SafeAreaView ici, c'est déjà géré dans _layout.tsx */}
-      
-//       <AdminHeader />
-//       <StatsGrid />
-
-//       <Text style={styles.section}>Actions rapides</Text>
-//       <QuickActions />
-//     </ScrollView>
-//   )
-// }
-
-// const styles = StyleSheet.create({
-//   page: {
-//     flex: 1,
-//     backgroundColor: "#ECE8D8",
-//   },
-
-//   content: {
-//     padding: 16,
-//     paddingBottom: 20,
-//   },
-
-//   section: {
-//     marginTop: 20,
-//     fontWeight: "bold",
-//     fontSize: 24,
-//   }
-// })

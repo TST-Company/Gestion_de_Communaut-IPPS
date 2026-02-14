@@ -1,4 +1,3 @@
-
 import { StyleSheet, ScrollView, View, TextInput } from "react-native"
 import { Ionicons } from "@expo/vector-icons"
 import { useState } from "react"
@@ -56,6 +55,7 @@ export default function UsersScreen() {
             onChangeText={setSearchQuery}
           />
         </View>
+        {/* <Text>Coder is my life </Text> */}
         
         <View style={styles.filterButton}>
           <Ionicons name="filter-outline" size={20} color="#C49A3A" />

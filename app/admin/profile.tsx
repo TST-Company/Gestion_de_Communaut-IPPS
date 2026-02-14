@@ -13,6 +13,7 @@ const USER_DATA = {
   role: "Administrateur",
   initials: "JN",
 }
+
 export default function ProfileScreen() {
    const router = useRouter()
 
