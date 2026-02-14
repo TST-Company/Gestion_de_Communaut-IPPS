@@ -49,12 +49,22 @@ export default function Login() {
                 {/* Button */}
                 <PrimaryButton 
                   title="Se connecter"
-                  onPress={() => router.push("/dashboard")}
+                  onPress={() => router.push("/bikamoi/bikamoi_dashboard")}
                 />
                  
                 <TouchableOpacity onPress={() => router.push("/login")}>
                   <Text style={{ textAlign: "center", marginTop: 12 }}>Modifier le numéro </Text>
                 </TouchableOpacity>
+
+                <Button
+                    title="Test Admin"
+                    onPress={() => router.replace("/admin/dashboard")}
+                  /> 
+
+                <Button
+                    title="Test Bikamoi"
+                    onPress={() => router.replace("/bikamoi/bikamoi_dashboard")}
+                  /> 
                  
 
               </View>

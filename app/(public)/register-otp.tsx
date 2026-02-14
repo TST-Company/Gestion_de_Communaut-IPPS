@@ -50,14 +50,11 @@ export default function registerOtp() {
         
                 {/* Button */}
                 <PrimaryButton
-                          title="Se connecter"
+                          title="S'inscrire"
                           onPress={() => router.push("/register-success")}
                         />
 
-                 <Button
-                    title="Test Admin"
-                    onPress={() => router.replace("/admin/dashboard")}
-                  />                
+                                
               </View>
         </ScrollView>
     )    

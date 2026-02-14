@@ -1,7 +1,6 @@
 import { StyleSheet, ScrollView, View } from "react-native"
-import { SafeAreaView } from "react-native-safe-area-context"
-import MessageHeader from "@/components/admin/messageHeader"
-import MessageCard from "@/components/admin/messageCard" 
+import BikamoiMessageHeader from "@/components/bikamoi/bikamoimessageHeader"
+import BikamoiMessageCard from "@/components/bikamoi/bikamoimessageCard"
 
 // Données de test (remplacez plus tard par votre API)
 const MOCK_MESSAGES = [
@@ -47,36 +46,28 @@ const MOCK_MESSAGES = [
   },
 ]
 
-export default function MessagesScreen() {
-  return (
-    // <SafeAreaView style={styles.page} edges={['top', 'left', 'right']}>
-        <ScrollView 
-      style={styles.page}
-      // edges={['top', 'left', 'right']}
-      contentContainerStyle={styles.content}
-      showsVerticalScrollIndicator={false}
-    >
-      <MessageHeader />
-      
-      <View style={styles.messagesList}>
-        {MOCK_MESSAGES.map((message) => (
-          <MessageCard key={message.id} message={message} />
-        ))}
-      </View>
-    </ScrollView>
-    
-
-
-
-    // </SafeAreaView>
-  )
+export default function bikamoiMessagesScreen() {
+    return (
+            <ScrollView 
+          style={styles.page}
+          contentContainerStyle={styles.content}
+          showsVerticalScrollIndicator={false}
+        >
+          <BikamoiMessageHeader />
+          
+          <View style={styles.messagesList}>
+            {MOCK_MESSAGES.map((message) => (
+              <BikamoiMessageCard key={message.id} message={message} />
+            ))}
+          </View>
+        </ScrollView>
+      )
 }
 
 const styles = StyleSheet.create({
   page: {
     flex: 1,
     backgroundColor: "#ECE8D8",
-    // padding: 16,
     paddingBottom: 0, // Important : pas de padding bottom
   },
 

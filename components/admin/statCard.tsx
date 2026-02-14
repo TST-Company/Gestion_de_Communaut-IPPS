@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
   value: {
     fontSize: 18,
     fontWeight: "bold",
-    fontSize: 24,
   },
   title: {
     fontSize: 11

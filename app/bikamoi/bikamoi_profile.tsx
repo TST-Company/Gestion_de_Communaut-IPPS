@@ -1,17 +1,17 @@
 import { StyleSheet, ScrollView, View, Text, TouchableOpacity, Alert } from "react-native"
 import { Ionicons } from "@expo/vector-icons"
-import ProfileHeader from "@/components/admin/profileHeader"
-import ProfileAvatar from "@/components/admin/profileAvatar"
-import ProfileInfo from "@/components/admin/profileInfo"
+import ProfileHeader from "@/components/bikamoi/bikamoiprofileHeader"
+import ProfileAvatar from "@/components/bikamoi/bikamoiprofileAvatar"
+import ProfileInfo from "@/components/bikamoi/bikamoiprofileInfo"
 import { useRouter } from "expo-router"
 
 // Données de l'utilisateur (à remplacer par vos vraies données)
 const USER_DATA = {
-  firstName: "James",
-  lastName: "Niox",
-  phone: "+221 78 794 40 47",
-  role: "Administrateur",
-  initials: "JN",
+  firstName: "Elie",
+  lastName: "Diatta",
+  phone: "+221 77 723 77 20",
+  role: "Bikamoi",
+  initials: "ED",
 }
 export default function ProfileScreen() {
    const router = useRouter()

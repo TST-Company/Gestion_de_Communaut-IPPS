@@ -138,23 +138,23 @@ const styles = StyleSheet.create({
 //     marginTop: 20,
 //     backgroundColor: "#E6D3A3",
 // }
-text: {
-  marginTop: 20,
-  fontSize: 14
-},
+  text: {
+    marginTop: 20,
+    fontSize: 14
+  },
 
-mainButton: {
-  backgroundColor: "#E6D3A3",
-  borderRadius: 30,
-  paddingVertical: 14,
-  marginTop: 10
-},
+  mainButton: {
+    backgroundColor: "#E6D3A3",
+    borderRadius: 30,
+    paddingVertical: 14,
+    marginTop: 10
+  },
 
-mainButtonText: {
-  textAlign: "center",
-  fontWeight: "bold",
-  color: "white", 
-  fontSize: 23
-},
+  mainButtonText: {
+    textAlign: "center",
+    fontWeight: "bold",
+    color: "white", 
+    fontSize: 23
+  },
 
 })
