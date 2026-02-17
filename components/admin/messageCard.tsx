@@ -12,6 +12,20 @@ interface MessageCardProps {
   }
 }
 
+  // messageCard.tsx
+export interface Message {
+  id: string
+  type: "whatsapp" | "sms"
+  title: string
+  recipients: string
+  time: string
+  status: "sent" | "draft"
+}
+
+interface MessageCardProps {
+  message: Message
+}
+
 export default function MessageCard({ message }: MessageCardProps) {
   const getStatusColor = () => {
     return message.status === "sent" ? "#4CAF50" : "#C49A3A"

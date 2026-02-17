@@ -1,9 +1,9 @@
 import { StyleSheet, ScrollView, View } from "react-native"
-import { SafeAreaView } from "react-native-safe-area-context"
-import MessageHeader from "@/components/admin/messageHeader"
-import MessageCard from "@/components/admin/messageCard" 
+import BikamoiMessageHeader from "@/components/bikamoi/bikamoimessageHeader"
+import BikamoiMessageCard from "@/components/bikamoi/bikamoimessageCard"
+
 // Données de test (remplacez plus tard par votre API)
-const MOCK_MESSAGES: Message[] = [
+const MOCK_MESSAGES = [
   {
     id: "1",
     type: "whatsapp",
@@ -46,29 +46,29 @@ const MOCK_MESSAGES: Message[] = [
   },
 ]
 
-export default function MessagesScreen() {
-  return (
-        <ScrollView 
+export default function bikamoiMessagesScreen() {
+    return (
+            <ScrollView 
           style={styles.page}
           contentContainerStyle={styles.content}
           showsVerticalScrollIndicator={false}
         >
-          <MessageHeader />
-        
+          <BikamoiMessageHeader />
+          
           <View style={styles.messagesList}>
             {MOCK_MESSAGES.map((message) => (
-              <MessageCard key={message.id} message={message} />
+              <BikamoiMessageCard key={message.id} message={message} />
             ))}
           </View>
-      </ScrollView>
-  )
+        </ScrollView>
+      )
 }
 
 const styles = StyleSheet.create({
   page: {
     flex: 1,
     backgroundColor: "#ECE8D8",
-    paddingBottom: 0, 
+    paddingBottom: 0, // Important : pas de padding bottom
   },
 
   content: {

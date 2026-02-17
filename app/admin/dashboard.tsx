@@ -11,7 +11,7 @@ export default function AdminDashboard() {
     <ScrollView 
           style={styles.page}
           // edges={['top', 'left', 'right']}
-          contentContainerStyle={styles.content}
+          // contentContainerStyle={styles.content}
           showsVerticalScrollIndicator={false}
         >
         <AdminHeader />
@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     padding: 16,
     paddingBottom: 0, 
   },
+
 
   section: {
     marginTop: 20,
